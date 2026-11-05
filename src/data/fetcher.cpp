@@ -30,6 +30,9 @@ static PsramAllocator _psram_alloc;
 // Hard-reset the ESP32-C6 WiFi coprocessor via its reset pin.
 // ESP.restart() only resets the P4 — the C6 retains its bad state.
 static void reset_wifi_c6() {
+#if !CONFIG_IDF_TARGET_ESP32P4
+    return;  // WiFi is on-chip (ESP32-S3 boards), no coprocessor to reset
+#endif
     Serial.println("Resetting C6 WiFi module...");
     pinMode(WIFI_C6_RST, OUTPUT);
     digitalWrite(WIFI_C6_RST, LOW);

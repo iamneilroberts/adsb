@@ -38,6 +38,13 @@ All views support:
 - Built-in 100Mbps Ethernet (IP101 PHY)
 - ESP32-C6 WiFi module (SDIO hosted)
 
+**Also supported: Seeed SenseCAP Indicator** (ESP32-S3, 8MB PSRAM, 8MB flash). Build environment `sensecap`.
+- 4" 480x480 RGB display (ST7701S, initialized over SPI via the TCA9535 IO expander)
+- FT6336 capacitive touchscreen
+- WiFi only (set `WIFI_SSID`/`WIFI_PASS` in `src/config.h` or in Settings)
+- Uses the compact UI (`src/ui_s3/`); board code is in `src/sensecap/`. No vendor HAL files needed.
+- Flash with `pio run -e sensecap -t upload` over the USB-C port (CH340 serial).
+
 > This project was built for the JC1060P470C board. See [Adapting to Other Boards](#adapting-to-other-boards) for how to port it to different ESP32 hardware.
 
 ---

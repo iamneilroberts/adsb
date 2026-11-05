@@ -26,7 +26,7 @@ static lv_obj_t *_range_label = nullptr;
 #define TITLE_H 24
 #define COL_HEADER_H 16
 #define HEADER_H (TITLE_H + COL_HEADER_H)
-#define MAX_ROWS 8
+#define MAX_ROWS (LCD_V_RES >= 480 ? 16 : 8)  // 480x480 panels have room for twice the rows
 
 // Sort modes
 enum SortMode {
