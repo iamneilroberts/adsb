@@ -38,6 +38,8 @@ All views support:
 - Built-in 100Mbps Ethernet (IP101 PHY)
 - ESP32-C6 WiFi module (SDIO hosted)
 
+> **JC1060P470C-V2:** the V2 revision uses a different display panel. Build and upload the `jc1060_v2` environment instead of `jc1060` (everywhere below, substitute `jc1060_v2` for `jc1060`).
+
 > This project was built for the JC1060P470C board. See [Adapting to Other Boards](#adapting-to-other-boards) for how to port it to different ESP32 hardware.
 
 ---
