@@ -3,8 +3,13 @@
 // ESP32-S3 YD-ESP32-23 + 3.5" Display-F (480x320 SPI)
 // Pin mapping — verify against actual board silkscreen before first boot
 
+// Overridable via build flags (SenseCAP Indicator reuses ui_s3 at 480x480)
+#ifndef LCD_H_RES
 #define LCD_H_RES 480
+#endif
+#ifndef LCD_V_RES
 #define LCD_V_RES 320
+#endif
 
 // TFT SPI pins (directly connected to Display-F header)
 #define TFT_MOSI  11
